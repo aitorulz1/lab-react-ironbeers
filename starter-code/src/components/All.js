@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {getBeers} from '../service/ServiceBeer';
+import SingleBeer from '../components/SingleBeer';
 
 
-const All = () => {
-    return(
-        <div>
-            <div className="card">
-                <img src="../images/beers.png" alt="" />
-                <div className="text-container">
-                    <div classNme="title">BEER</div>
-                    <div classNme="content">  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-                </div>            
+class All extends Component {
+    state = {
+        beers: []
+    }
+ 
+    componentDidMount() {
+        getBeers().then(
+            beers => this.setState({
+                beers
+            })
+        )
+    };
+
+    render() {
+        return(
+            <div>
+                {
+                    this.state.beers.map(beer => (
+                        <SingleBeer {...beer} />
+                    ))
+                }
             </div>
-        </div>
-    )
+        )
+    }
+
 }
 
 export default All

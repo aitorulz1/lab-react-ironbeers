@@ -8,7 +8,6 @@ import Random from './components/Random';
 import New from './components/New';
 
 
-
 class App extends Component {
   render() {
     return (
