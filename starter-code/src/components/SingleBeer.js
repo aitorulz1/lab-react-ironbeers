@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Single = () => {
+const Single = ({ name }) => {
     
     return(
-        <div></div>
+        <div>
+            {name}
+        </div>
     )
 }
 
