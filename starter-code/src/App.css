@@ -30,6 +30,14 @@
   padding: 20px 30px;
 }
 
+.title{
+  font-weight: 700;
+}
+
+.content {
+  text-align: justify;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
